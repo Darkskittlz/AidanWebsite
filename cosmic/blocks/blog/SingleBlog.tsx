@@ -4,7 +4,6 @@ import Markdown from "react-markdown";
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Comments } from "@/cosmic/blocks/comments/Comments";
 import { getFormattedDate } from "@/cosmic/utils";
 
 export async function SingleBlog({
@@ -80,14 +79,6 @@ export async function SingleBlog({
             <Markdown className="space-y-4 text-zinc-700 dark:text-zinc-300">
               {blog.metadata.content}
             </Markdown>
-            <Comments
-              query={{
-                type: "comments",
-                "metadata.resource": blog.id,
-                "metadata.approved": true,
-              }}
-              className="mt-10"
-            />
             <div className="my-10">
               <Link
                 href="/blog"
