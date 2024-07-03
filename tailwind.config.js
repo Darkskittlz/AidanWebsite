@@ -14,6 +14,9 @@ module.exports = {
       padding: "2rem",
       screens: {
         "2xl": "1400px",
+        "smMobile": "375px",
+        "tablet": "768px",
+        "desktop": "1024px",
       },
     },
     extend: {
@@ -54,6 +57,18 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        red: {
+          DEFAULT: "hsl(0, 70%, 50%)",
+          foreground: "hsl(0, 70%, 20%)",
+        },
+        green: {
+          DEFAULT: "hsl(120, 70%, 50%)",
+          foreground: "hsl(120, 70%, 20%)",
+        },
+        blue: {
+          DEFAULT: "hsl(240, 70%, 50%)",
+          foreground: "hsl(240, 70%, 20%)",
         },
       },
       borderRadius: {

@@ -66,31 +66,6 @@ export default function Banner(): JSX.Element {
           </svg>
         </a>
       </div>
-      <div className="mt-2">
-        This is a{" "}
-        <a
-          href="https://www.cosmicjs.com"
-          className="text-[#3c9dc7] dark:text-[#29ABE2] font-medium"
-        >
-          Cosmic
-        </a>{" "}
-        template. Install it on the{" "}
-        <a
-          href="https://www.cosmicjs.com/templates/agency"
-          className="text-[#3c9dc7] dark:text-[#29ABE2] mr-1 font-medium"
-        >
-          Agency Website template page
-        </a>
-        and find the source code on
-        <a
-          href="https://github.com/cosmicjs/agency-template"
-          className="ml-1 text-[#3c9dc7] dark:text-[#29ABE2] font-medium"
-          target="_parent"
-        >
-          GitHub
-        </a>
-        .
-      </div>
     </div>
   );
 }
