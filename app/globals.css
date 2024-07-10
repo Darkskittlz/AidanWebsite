@@ -73,7 +73,7 @@
   body {
     background-image: url('../public/aidanLogo2.JPG'), url('../public/aidanLogo5.JPG'), url('../public/aidanLogo3.JPG'), url('../public/aidanLogo4.JPG');
     background-repeat: repeat-y;
-    background-size: 50% 100%, 50% 100%;
+    background-size: 50%, 50%;
     background-position: top left, top right;
     animation: slideshow 13s infinite;
     object-fit: cover;
