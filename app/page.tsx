@@ -54,7 +54,7 @@ export default async function Home() {
         <div key="Shop" className="items-center flex flex-col smMobile:w-full">
           <h1 className="text-center py-4 text-3xl uppercase"> Support </h1>
           <img className="h-96 object-center rounded-lg" src="/bandcamp.png" />
-          <button className="border mt-4 border-blue rounded-xl desktop:w-1/3 smMobile:w-2/4 justify-center cursor-pointer p-6 text-white target:shadow-lg bg-blue">
+          <button className="border mt-4 border-blue rounded-xl desktop:w-1/2 smMobile:w-2/4 justify-center cursor-pointer p-6 text-white target:shadow-lg bg-blue">
             <a target="_blank" href="https://aidanpaul.bandcamp.com/track/alone-again-on-christmas-day"> BandCamp </a>
           </button>
         </div>
