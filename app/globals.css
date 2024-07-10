@@ -71,7 +71,32 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background-image: url('../public/aidanLogo2.JPG'), url('../public/aidanLogo5.JPG'), url('../public/aidanLogo3.JPG'), url('../public/aidanLogo4.JPG');
+    background-repeat: repeat-y;
+    background-size: 50% 100%, 50% 100%;
+    background-position: top left, top right;
+    animation: slideshow 13s infinite;
+    object-fit: cover;
+  }
+@keyframes slideshow {
+    0%, 25% {
+      background-image: url('../public/aidanLogo2.JPG'), url('../public/aidanLogo3.JPG'), url('../public/aidanLogo4.JPG'), url('../public/aidanLogo5.JPG');
+    }
+    30%, 55% {
+      background-image: url('../public/aidanLogo3.JPG'), url('../public/aidanLogo2.JPG'), url('../public/aidanLogo5.JPG'), url('../public/aidanLogo4.JPG');
+    }
+    60%, 85% {
+      background-image: url('../public/aidanLogo4.JPG'), url('../public/aidanLogo5.JPG'), url('../public/aidanLogo2.JPG'), url('../public/aidanLogo3.JPG');
+    }
+  }
+  @media screen and (max-width: 765px) {
+    body {
+      background-image: url('../public/aidanLogo2.JPG');
+      background-size: cover;
+      background-position: center;
+      animation: slideshow 15s 1;
+      background-repeat: repeat-y;
+    }
   }
 }
 

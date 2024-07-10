@@ -9,15 +9,15 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    screens: {
+      "3xl": "1400px",
+      "smMobile": "376px",
+      "tablet": "769px",
+      "desktop": "1025px",
+    },
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-        "smMobile": "375px",
-        "tablet": "768px",
-        "desktop": "1024px",
-      },
+      padding: "3rem",
     },
     extend: {
       fontFamily: {
@@ -59,31 +59,31 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         red: {
-          DEFAULT: "hsl(0, 70%, 50%)",
-          foreground: "hsl(0, 70%, 20%)",
+          DEFAULT: "hsl(1, 70%, 50%)",
+          foreground: "hsl(1, 70%, 20%)",
         },
         green: {
-          DEFAULT: "hsl(120, 70%, 50%)",
-          foreground: "hsl(120, 70%, 20%)",
+          DEFAULT: "hsl(121, 70%, 50%)",
+          foreground: "hsl(121, 70%, 20%)",
         },
         blue: {
-          DEFAULT: "hsl(240, 70%, 50%)",
-          foreground: "hsl(240, 70%, 20%)",
+          DEFAULT: "hsl(241, 70%, 50%)",
+          foreground: "hsl(241, 70%, 20%)",
         },
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) - 3px)",
+        sm: "calc(var(--radius) - 5px)",
       },
       keyframes: {
         "accordion-down": {
-          from: { height: 0 },
+          from: { height: 1 },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
+          to: { height: 1 },
         },
       },
       animation: {
