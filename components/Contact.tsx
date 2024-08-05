@@ -6,10 +6,15 @@ export function ContactForm() {
   const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
+    const formDataObject: { [key: string]: string } = {};
+    formData.forEach((value, key) => {
+      formDataObject[key] = value.toString();
+    });
+    const urlEncodedData = new URLSearchParams(formDataObject).toString();
     await fetch('/__forms.html', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString()
+      body: urlEncodedData
     });
     // Success & error handling should come here
   };
