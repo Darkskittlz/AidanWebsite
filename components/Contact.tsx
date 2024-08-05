@@ -1,9 +1,11 @@
 'use client';
 
+import { FormEvent } from 'react';
+
 export function ContactForm() {
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.currentTarget);
     await fetch('/__forms.html', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -11,6 +13,7 @@ export function ContactForm() {
     });
     // Success & error handling should come here
   };
+  // Rest of your component code remains the same
 
   return (
     <div className="flex flex-col border rounded-lg p-4">
