@@ -28,24 +28,24 @@ export function ContactForm() {
           <label htmlFor="firstName">
             First Name:
           </label> <br />
-          <input className="bg-white" type="text" name="firstname" id="firstname" key="firstname" />
+          <input className="bg-white text-black" type="text" name="firstname" id="firstname" key="firstname" />
           <br />
           <label htmlFor="lastName">
             Last Name:
           </label> <br />
-          <input className="bg-white" type="text" name="lastName" id="lastName" key="lastName" />
+          <input className="bg-white text-black" type="text" name="lastName" id="lastName" key="lastName" />
         </p>
         <p>
           <label htmlFor="youremail">
             Your Email:
           </label> <br />
-          <input className="bg-white" type="email" name="email" id="youremail" key="email" />
+          <input className="bg-white text-black" type="email" name="email" id="youremail" key="email" />
         </p>
         <p>
           <label htmlFor="yourmessage">
             Message:
           </label> <br />
-          <textarea className="bg-white" name="message" id="yourMessage" key="message"></textarea>
+          <textarea className="bg-white text-black" name="message" id="yourMessage" key="message"></textarea>
         </p>
         <p>
           <button
