@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @layer base {
   :root {
@@ -70,6 +70,7 @@
   * {
     @apply border-border;
   }
+
   body {
     background-image: url('../public/aidanLogo2.JPG'), url('../public/aidanLogo5.JPG'), url('../public/aidanLogo3.JPG'), url('../public/aidanLogo4.JPG');
     background-repeat: repeat-y;
@@ -78,17 +79,25 @@
     animation: slideshow 13s infinite;
     object-fit: cover;
   }
-@keyframes slideshow {
-    0%, 25% {
+
+  @keyframes slideshow {
+
+    0%,
+    25% {
       background-image: url('../public/aidanLogo2.JPG'), url('../public/aidanLogo3.JPG'), url('../public/aidanLogo4.JPG'), url('../public/aidanLogo5.JPG');
     }
-    30%, 55% {
+
+    30%,
+    55% {
       background-image: url('../public/aidanLogo3.JPG'), url('../public/aidanLogo2.JPG'), url('../public/aidanLogo5.JPG'), url('../public/aidanLogo4.JPG');
     }
-    60%, 85% {
+
+    60%,
+    85% {
       background-image: url('../public/aidanLogo4.JPG'), url('../public/aidanLogo5.JPG'), url('../public/aidanLogo2.JPG'), url('../public/aidanLogo3.JPG');
     }
   }
+
   @media screen and (max-width: 765px) {
     body {
       background-image: url('../public/aidanLogo2.JPG');

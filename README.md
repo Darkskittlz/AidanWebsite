@@ -6,6 +6,8 @@
   - Link to PDF or google Doc
 
 
+## Article for Netlify Contact Form
+https://www.netlify.com/blog/2020/05/26/add-a-netlify-powered-contact-form-to-your-next-js-site/
 
 
 ***
@@ -35,8 +37,6 @@ cd agency-template
 bun install
 ```
 
-3. Create a `.env.local` file with your Cosmic API keys. Find these after logging in to the Cosmic dashboard in [Project > API keys](https://app.cosmicjs.com/?redirect_to=?highlight=api-keys).
-
 ```
 cp .env.example .env.local
 ```
@@ -57,14 +57,6 @@ STRIPE_SECRET_KEY=change_to_your_stripe_secret_key
 ```
 bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-## Deploy to Vercel
-
-Use the following button to deploy to Vercel. You will be asked to add API accesss keys as environment variables.
-
-<a href="https://vercel.com/import/git?c=1&s=https://github.com/cosmicjs/agency-template&env=COSMIC_BUCKET_SLUG,COSMIC_READ_KEY,COSMIC_WRITE_KEY" rel="noopener noreferrer" target="_blank"><img src="https://cdn.cosmicjs.com/d3f0d5e0-c064-11ea-9a05-6f8a16b0b14c-deploy-to-vercel.svg" style="width: 100px;" class="fr-fic fr-dib fr-fil"></a>
 
 ## License
 

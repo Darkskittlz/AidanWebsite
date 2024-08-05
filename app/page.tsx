@@ -1,3 +1,4 @@
+import ContactForm from '../components/Contact';
 import { createBucketClient } from '@cosmicjs/sdk';
 import 'tailwindcss/tailwind.css';
 const cosmic = createBucketClient({
@@ -21,13 +22,13 @@ export default async function Home() {
           }) => {
             return (
               <div className="items-center pt-4 mx-2 flex flex-col" key={post.title}>
-                <div className="smMobile:w-full desktop:w-1/3 justify-center backdrop-blur-lg p-4">
+                <div className="smMobile:w-full desktop:w-2/3 justify-center backdrop-blur-lg p-4">
                   <div>
                     <h1 className="text-3xl text-center">{post.title}</h1>
                   </div>
                   <div className="justify-center flex">
                     <img
-                      className="h-96 rounded-xl"
+                      className="h-full rounded-xl"
                       src={`${post.metadata.image.imgix_url}?w=500&auto=format,compression`}
                       alt={post.title}
                     />
@@ -57,6 +58,10 @@ export default async function Home() {
           <button className="border mt-4 border-blue rounded-xl desktop:w-1/2 smMobile:w-2/4 justify-center cursor-pointer p-6 text-white target:shadow-lg bg-blue">
             <a target="_blank" href="https://aidanpaul.bandcamp.com/track/alone-again-on-christmas-day"> BandCamp </a>
           </button>
+        </div>
+        <div key="Contact" className="pt-10 items-center flex flex-col smMobile:w-full">
+          <h1 className="text-center py-4 text-3xl uppercase"> Contact </h1>
+          <ContactForm />
         </div>
       </div>
     </>
