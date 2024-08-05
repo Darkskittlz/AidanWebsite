@@ -1,8 +1,20 @@
-const ContactForm = () => {
+'use client';
+
+export function ContactForm() {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    await fetch('/__forms.html', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    });
+    // Success & error handling should come here
+  };
 
   return (
     <div className="flex flex-col border rounded-lg p-4">
-      <form name="contact" action="/success" method="POST" data-netlify="true">
+      <form name="contact" action="/success" method="POST" data-netlify="true" onSubmit={handleFormSubmit}>
         <input className="text-black" type="hidden" name="form-name" value="contact" />
         <p>
           <label htmlFor="firstName">

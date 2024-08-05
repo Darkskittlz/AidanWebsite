@@ -10,9 +10,9 @@ import { ProductType } from "@/cosmic/blocks/ecommerce/AddToCart";
 import Link from "next/link";
 import { cn } from "@/cosmic/utils";
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
-);
+// const stripePromise = loadStripe(
+// process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
+// );
 
 function cartTotal(cart: ProductType[]) {
   let total = 0;
@@ -70,12 +70,12 @@ export function CheckOut({
                 {" "}
                 /{" "}
                 {item.metadata.recurring.interval_count &&
-                item.metadata.recurring.interval_count !== 1
+                  item.metadata.recurring.interval_count !== 1
                   ? item.metadata.recurring.interval_count
                   : ""}{" "}
                 {item.metadata.recurring.interval.value}
                 {item.metadata.recurring.interval_count &&
-                item.metadata.recurring.interval_count !== 1
+                  item.metadata.recurring.interval_count !== 1
                   ? "s"
                   : ""}
               </span>
