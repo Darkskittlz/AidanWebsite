@@ -60,7 +60,6 @@ export default async function Home() {
           </button>
         </div>
         <div key="Contact" className="pt-10 items-center flex flex-col smMobile:w-full">
-          <h1 className="text-center py-4 text-3xl uppercase"> Contact </h1>
           <ContactForm />
         </div>
       </div>
