@@ -1,20 +1,34 @@
-// app/shop/[slug]/page.tsx
-import { SingleProduct } from "@/cosmic/blocks/ecommerce/SingleProduct";
-export default async function SingleProductPage({
+import { createBucketClient } from '@cosmicjs/sdk';
+import 'tailwindcss/tailwind.css';
+import { getPost } from '../../../lib/cosmic';
+import { getRelatedPosts } from '../../../lib/cosmic';
+
+const cosmic = createBucketClient({
+  bucketSlug: process.env.BUCKET_SLUG || '',
+  readKey: process.env.BUCKET_READ_KEY || '',
+});
+
+
+export async function generateMetadata({
   params,
-  searchParams,
 }: {
-  params: { slug: string };
-  searchParams: {
-    success?: string;
-  };
+  params: { slug: 'epk' };
 }) {
+  const post = await getPost({ params });
+  return {
+    title: `${post.title}`,
+  };
+}
+
+
+
+export default async function EPK({ slug }: { params: string }) {
+  const { object: post } = await cosmic.objects.getPost({ slug });
+  const suggestedPosts = await getRelatedPosts({ slug });
   return (
-    <main className="p-4">
-      <SingleProduct
-        query={{ slug: params.slug, type: "products" }}
-        purchased={searchParams.success ? true : false}
-      />
-    </main>
+    <div className="flex flex-col justify-center">
+      <h1>Page in progress</h1>
+    </div>
   );
 }
+
