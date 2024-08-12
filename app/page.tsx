@@ -59,8 +59,10 @@ export default async function Home() {
             <a target="_blank" href="https://aidanpaul.bandcamp.com/track/alone-again-on-christmas-day"> BandCamp </a>
           </button>
         </div>
-        <div key="Contact" className="pt-10 items-center flex flex-col smMobile:w-full">
-          <ContactForm />
+        <div key="Contact" className="pt-10 items-center flex flex-col w-full">
+          <div className="w-1/2 backdrop-blur-md">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </>

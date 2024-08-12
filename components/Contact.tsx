@@ -71,7 +71,11 @@ export function ContactForm() {
       {formSubmitted ? (
         <div className="alert alert-success flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Submitted!</div>
       ) : (
-        <form ref={form} id="myForm" onSubmit={(event) => handleFormSubmit(event)}>
+        <form
+          ref={form}
+          id="myForm"
+          onSubmit={(event) => handleFormSubmit(event)}
+        >
           <FormControl>
             <FormLabel
               css={{
@@ -84,7 +88,7 @@ export function ContactForm() {
               <input
                 id="name"
                 type="name"
-                className="bg-white text-black"
+                className="bg-white text-black w-3/4 rounded-md"
                 name="user_name"
                 placeholder="Name"
                 onChange={(event) => {
@@ -94,16 +98,16 @@ export function ContactForm() {
               <input
                 id="email"
                 type='email'
-                className="bg-white text-black"
+                className="bg-white text-black w-3/4 rounded-md"
                 name="user_email"
                 placeholder="E-Mail"
                 onChange={(event) => {
                   setEmail(event.target.value)
                 }}
               />
-              <div>
+              <div className="w-full flex justify-center">
                 <textarea
-                  className="bg-white text-black"
+                  className="bg-white text-black w-3/4 rounded-md"
                   id="message"
                   placeholder="Message"
                   name="user_message"
