@@ -31,6 +31,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "date-and-time": "^3.4.1",
+    "deepmerge": "^4.3.1",
     "dotenv": "^16.4.5",
     "lucide-react": "^0.311.0",
     "next": "latest",
