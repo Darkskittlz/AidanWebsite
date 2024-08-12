@@ -1,6 +1,5 @@
 'use client';
 
-// import { FormEvent } from 'react';
 import { useState, useRef } from 'react';
 import axios from 'axios';
 import date from 'date-and-time';
@@ -18,22 +17,25 @@ export function ContactForm() {
   const [formFailed, setFormFailed] = useState(false);
   const form = useRef();
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [message, setMessage] = useState(null)
-  const [email, setEmail] = useState(null)
-  const [name, setName] = useState(null)
+  const [message, setMessage] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
+  const [name, setName] = useState<string | null>(null);
 
   const sendData = async () => {
-    const formattedName = encodeURIComponent(name)
-    const formattedEmail = encodeURIComponent(email)
-    const formattedMessage = encodeURIComponent(message)
+    if (name && email && message) {
+      const formattedName = encodeURIComponent(name)
+      const formattedEmail = encodeURIComponent(email)
+      const formattedMessage = encodeURIComponent(message)
+      const URL = `name=${formattedName}&email=${formattedEmail}&message=${formattedMessage}`;
+      const results = await axios.post("/.netlify/functions/sendData/?" + URL);
+    } else {
+      console.error('One of the variables is null');
+    }
 
 
-    const URL = `name=${formattedName}&email=${formattedEmail}&message=${formattedMessage}`;
-    const results = await axios.post("/.netlify/functions/sendData/?" + URL);
-    console.log(results);
   }
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     try {
       event.preventDefault();
       sendData()

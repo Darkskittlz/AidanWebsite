@@ -21,10 +21,10 @@ export async function generateMetadata({
 }
 
 
+// const { object: post } = await cosmic.objects.getPost({ slug });
+// const suggestedPosts = await getRelatedPosts({ slug });
 
-export default async function EPK({ slug }: { params: string }) {
-  const { object: post } = await cosmic.objects.getPost({ slug });
-  const suggestedPosts = await getRelatedPosts({ slug });
+export default async function EPK() {
   return (
     <div className="flex flex-col justify-center">
       <h1>Page in progress</h1>
