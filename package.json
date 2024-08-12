@@ -38,6 +38,7 @@
     "lucide-react": "^0.311.0",
     "next": "latest",
     "next-themes": "^0.2.1",
+    "proxy-from-env": "^1.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-live-clock": "^6.1.23-beta",
