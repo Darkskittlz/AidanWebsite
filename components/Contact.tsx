@@ -4,42 +4,42 @@ import { useState, useRef } from 'react';
 import axios from 'axios';
 import date from 'date-and-time';
 import {
-  useDisclosure,
   FormControl,
   Button,
   FormLabel,
 } from '@chakra-ui/react'
 
 export function ContactForm() {
+  const form = useRef<HTMLFormElement>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formFailed, setFormFailed] = useState(false);
-  const form = useRef();
-  const { isOpen, onOpen, onClose } = useDisclosure()
   const [message, setMessage] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
   const [name, setName] = useState<string | null>(null);
 
   const sendData = async () => {
-    if (name && email && message) {
-      const formattedName = encodeURIComponent(name)
-      const formattedEmail = encodeURIComponent(email)
-      const formattedMessage = encodeURIComponent(message)
-      const URL = `name=${formattedName}&email=${formattedEmail}&message=${formattedMessage}`;
-      const results = await axios.post("/.netlify/functions/sendData/?" + URL);
-    } else {
-      console.error('One of the variables is null');
+    try {
+      if (name !== null && email !== null && message !== null) {
+        const formattedName = encodeURIComponent(name)
+        const formattedEmail = encodeURIComponent(email)
+        const formattedMessage = encodeURIComponent(message)
+        const URL = `name=${formattedName}&email=${formattedEmail}&message=${formattedMessage}`;
+        const results = await axios.post("/.netlify/functions/sendData/?" + URL);
+        console.log(results);
+        setFormSubmitted(true)
+      }
+
+    } catch (error) {
+      console.log(error)
+      setFormFailed(true)
     }
-
-
   }
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     try {
       event.preventDefault();
       sendData()
-      setFormSubmitted(true);
     } catch (error) {
-      setFormFailed(true);
     }
   }
 
@@ -71,7 +71,7 @@ export function ContactForm() {
       {formSubmitted ? (
         <div className="alert alert-success flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Submitted!</div>
       ) : (
-        <form name="ContactForm" data-netlify="true" onSubmit={handleFormSubmit}>
+        <form ref={form} id="myForm" onSubmit={(event) => handleFormSubmit(event)}>
           <FormControl>
             <FormLabel
               css={{

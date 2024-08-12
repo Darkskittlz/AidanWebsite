@@ -1,0 +1,12 @@
+[build]
+    command = 'CI= npm run build'
+    functions = 'netlify/functions'
+    publish = 'build'
+
+[functions]
+directory = "/netlify/functions/" 
+
+[[redirects]]
+  from = "/epk"
+  to = "/epk"
+  status = 200
