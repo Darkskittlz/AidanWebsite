@@ -6,10 +6,8 @@ import date from 'date-and-time';
 import {
   useDisclosure,
   FormControl,
-  FormErrorMessage,
   Button,
   FormLabel,
-  Select
 } from '@chakra-ui/react'
 
 export function ContactForm() {
