@@ -39,6 +39,7 @@
     "follow-redirects": "^1.15.6",
     "form-data": "^4.0.0",
     "lucide-react": "^0.311.0",
+    "mime-types": "^2.1.35",
     "next": "latest",
     "next-themes": "^0.2.1",
     "proxy-from-env": "^1.1.0",
