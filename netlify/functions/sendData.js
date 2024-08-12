@@ -9,7 +9,7 @@ exports.handler = async function(event, context, callback) {
     console.log('event', event);
     const name = event.queryStringParameters.name
     const email = event.queryStringParameters.email
-    const yourMessage = event.queryStringParameters.message
+    const message = event.queryStringParameters.message
     const email2 = "aidanpaulmedia@gmail.com"
 
     const payload = {
@@ -25,7 +25,7 @@ exports.handler = async function(event, context, callback) {
       to: `Tristan <${email2}>`,
       dynamicTemplateData: {
         greeting: `Hello Aidan. New Email from ${email}`,
-        message: `${yourMessage}`
+        message: `${message}`
       }
     }
 
