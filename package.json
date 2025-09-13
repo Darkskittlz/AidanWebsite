@@ -29,7 +29,7 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
     "asynckit": "^0.4.0",
-    "axios": "^1.7.3",
+    "axios": "^1.12.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "combined-stream": "^1.0.8",
